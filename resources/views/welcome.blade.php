@@ -4,7 +4,7 @@
 
 <style type="text/css">
   .all_sports{
-    background-color: #0a2940/*#558648*/;
+    background-color: #0a2940;
   }
   .text_color{
     color: #ffffff;
@@ -61,43 +61,7 @@
 }
 
 /*counter in modal*/
-.stepper-sport .stepper .stepper-arrow {
-  top: 0;
-  bottom: 0;
-  width: 60px;
-  height: 60px;
-  margin: 0;
-  line-height: 60px;
-  color: #fff;
-  text-align: center;
-  border-radius: 3px;
-  background-color: #616161;
-  transform: translateY(0);
-}
-.stepper-arrow.up {
-  right: 4px;
-  text-align: left;
-  font-size: 30px;
-}
-.stepper-arrow.down {
-  left: 4px;
-  text-align: right;
-  font-size: 30px;
-}
-.stepper {
-  position: relative;
-  display: inline-block;
-  max-width: 76px;
-  width: 76px;
-}
-.stepper-sport {
-  margin-top: 20px;
-}
-.stepper-sport .stepper {
-  width: 180px;
-  max-width: 180px;
-  text-align: center;
-}
+
 .stepper-sport .stepper input[type="number"] {
   width: 60px;
   max-width: 60px;
@@ -115,19 +79,7 @@
   background-color: #edeff4;
   border: 0;
 }
-.stepper-arrow {
-  position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  font-size: 16px;
-  line-height: 20px;
-  font-family: "Material Icons";
-  cursor: pointer;
-  color: #151515;
-  transition: .3s all ease;
-}
+
 .form-input {
   display: block;
   width: 100%;
@@ -150,21 +102,15 @@
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
-  background-color: #0c4aff;
   color: #fff;
 }
-.modal-sport-win-left{
-  margin-right: 285px;
-  font-size: 20px;
-  font-weight: 600;
+.modal-footer>a:hover{
+  text-decoration: none;
+    color: #fff;
 }
-.bet_possible_win{
- margin-right: 60px;
- font-size: 20px;
- font-weight: bold;
-}
+
 .modal-footer {
-  margin-top: 20px;
+  background-color: #3EA2E0;
 }
 /*counter in model end*/
 /*sport table end*/
@@ -362,41 +308,7 @@
                                              <br>
                                              <span style="color: #000000;">{{ $details->value }}</span>
                                          </a>
-                                         <!-- modal -->
-                                         <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog">
-                                            
-                                              <!-- Modal content-->
-                                              <div class="modal-content">
-                                                <div class="modal-header" style="background-color: #3EA2E0;">
-                                                  <button type="button" class="close" data-dismiss="modal" style="color: #fcf8e3;font-size: 30px;">&times;</button>
-                                                  <h4 class="modal-title" style="color: #ffffff;">PlACE A BET</h4>
-                                                </div>
-                                                <div class="modal-body" id="title">
-                                                  <p>Some text in the modal.</p>
-                                                </div>
-
-                                                   <!-- counter -->
-                                                   <div class="stepper-sport">
-                                                       <div class="stepper ">
-                                                            <input class="form-input" type="number" data-zeros="true" value="20" min="20" max="6000">
-                                                            <span class="stepper-arrow up">+</span>
-                                                            <span class="stepper-arrow down">-</span>
-                                                        </div>
-                                                   </div>
-                                                    <span style="color: red;" class="message2" id="message2">Limit (20 - 6000)</span>
-                                                <div class="modal-footer">
-                                                    <p class="modal-sport-win">
-                                                        <span class="modal-sport-win-left">Possible Return</span>
-                                                        <span class="bet_possible_win">51</span>
-                                                    </p>
-                                                    <button class="modal-sport-place button button-primary button-block" type="submit">place bet</button>  
-                                                </div>
-                                              </div>
-                                              
-                                            </div>
-                                          </div>
-                                          <!-- modal end -->
+                                         
                                      </div>
                                      @endforeach
                               </div>
@@ -460,7 +372,56 @@
         </div>               
     </div>
   </div>  
- </div>         
+ </div> 
+ <!-- modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">                                       
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #3EA2E0;">
+              <button type="button" class="close" data-dismiss="modal" style="color: #fcf8e3;font-size: 30px;">&times;</button>
+              <h4 class="modal-title" style="color: #ffffff;text-align: center;">PlACE A BET</h4>
+            </div>
+            <div class="modal-body" style="text-align: center;
+    font-size: 20px;" id="title" >
+              
+            </div>
+
+             <!-- counter -->
+            <div class="stepper-sport" style="height: 120px">
+               <div class="stepper ">
+                <div class="col-md-6">
+                  <p style="font-size: 20px;">1st over run of 1st innings</p>
+                  <p style="margin-left: 35px;">1-3 run</p>
+                  <p style="margin-left: 35px;">1.5</p>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-input" type="number" data-zeros="true" value="20" min="20" max="6000">
+                  <span style="color: red;margin-left: 85px;" class="message2" id="message2">Limit (20 - 6000)</span>
+                </div>
+                <p class="modal-sport-win">
+                <span style="margin-left: 65px;
+    font-size: 20px;">Possible Return</span>
+                <span style="margin-left: 15px;
+    font-size: 20px;">51</span>
+                </p> 
+               </div>
+            </div>
+            <!-- <span style="color: red;" class="message2" id="message2">Limit (20 - 6000)</span> -->
+            <div class="modal-footer">
+                <!-- <p class="modal-sport-win">
+                <span class="modal-sport-win-left">Possible Return</span>
+                <span class="bet_possible_win">51</span>
+                </p> -->
+                <!-- <button class="modal-sport-place button button-primary button-block" type="submit">place bet</button>  --> 
+                <a href="#" class="modal-sport-place">Place Bet</a>
+            </div>
+          </div>
+                                              
+        </div>
+      </div>
+<!-- modal end --> 
+
  </section> 
   @endsection
 
